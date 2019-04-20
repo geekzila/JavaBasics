@@ -34,4 +34,27 @@ public class UserServiceImpl implements UserService {
 		return users;
 	}
 
+	@Override
+	public User get(String name) {
+		for (User user : users) {
+			if(user.getName().equals(name)) {
+				return user;
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public void delete(String name) {
+		// TODO Auto-generated method stub
+		User user = get(name);
+		users.remove(user);
+	}
+
+	@Override
+	public User update(User user) {
+		int indexOf = users.indexOf(user);
+		users.set(indexOf, user);
+		return user;
+	}
 }

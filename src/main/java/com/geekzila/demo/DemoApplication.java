@@ -35,5 +35,16 @@ public class DemoApplication {
 			User user = users.get(i);
 			System.out.println("Name: " + user.getName());
 		}
+		
+		User rajniUserFromDB = userService.get("rajnikanth");
+		System.out.println("Get method :" + rajniUserFromDB.getName());
+		
+		userService.delete("rajnikanth");
+		
+		System.out.println("After deleting");
+		for (int i = 0; i < users.size(); i++) {
+			User user = users.get(i);
+			System.out.println("Name: " + user.getName());
+		}
 	}
 }
