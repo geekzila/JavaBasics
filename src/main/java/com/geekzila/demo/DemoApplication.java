@@ -35,13 +35,12 @@ public class DemoApplication {
 			User user = users.get(i);
 			System.out.println("Name: " + user.getName());
 		}
+		System.out.println("==============================================");
+		User rakesh = userService.get("Rakesh");
+		System.out.println("Get method: " + rakesh.getName());
 		
-		User rajniUserFromDB = userService.get("rajnikanth");
-		System.out.println("Get method :" + rajniUserFromDB.getName());
-		
+		System.out.println("========== Remove the user ===================");
 		userService.delete("rajnikanth");
-		
-		System.out.println("After deleting");
 		for (int i = 0; i < users.size(); i++) {
 			User user = users.get(i);
 			System.out.println("Name: " + user.getName());

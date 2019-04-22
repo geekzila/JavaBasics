@@ -20,6 +20,4 @@ public interface UserService {
 	public User get(String name);
 	
 	public void delete(String name);
-	
-	public User update(User user);
 }

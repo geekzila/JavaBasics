@@ -14,10 +14,10 @@ import com.geekzila.demo.service.UserService;
  *
  */
 public class UserServiceImpl implements UserService {
-	
+
 	// Database, File, storage mechanism
 	private static List<User> users = new ArrayList<User>();
-	
+
 	public UserServiceImpl() {
 		// TODO Auto-generated constructor stub
 		users.add(new User("Rakesh"));
@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService {
 	public void add(User user) {
 		users.add(user);
 	}
-	
+
 	@Override
 	public List<User> findAll() {
 		return users;
@@ -36,7 +36,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User get(String name) {
-		for (User user : users) {
+		for (User user: users) {
 			if(user.getName().equals(name)) {
 				return user;
 			}
@@ -47,14 +47,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void delete(String name) {
 		// TODO Auto-generated method stub
-		User user = get(name);
-		users.remove(user);
-	}
-
-	@Override
-	public User update(User user) {
-		int indexOf = users.indexOf(user);
-		users.set(indexOf, user);
-		return user;
+		User userFromDb = get(name);
+		users.remove(userFromDb);
 	}
 }
